@@ -28,6 +28,10 @@ void run_motorb(int revolutions){
 
 
 
+///////////////////////////////////////
+//This whole section can be condensed using a stepper library 
+/////////////////////////////
+
 
 void stepperb() {
   switch (sequence_num) {

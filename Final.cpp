@@ -1,3 +1,5 @@
+
+//Defines pins on arduino. 4-11 are digital pins.
 #define IN1a 8
 #define IN2a 9
 #define IN3a 10
@@ -11,13 +13,15 @@
 
 //////////////////////////////////////////////////  
 //Global Variables
+//THis could be automated using a gps GPS module but they are expensive. 
   float altitude;
   float azimuth;
 ////////////////////////////////////////////////// 
 
 //////////////////////////////////////////////////  
 //User Inputs
-//see if we can use a date and time library so we this field doesnt have to be inputed manually.
+//see if we can use a date and time library so we this field doesnt have to be inputed manually. Arduino also has 
+// a physical timer module that can be added. 
   int _month = 5;
   int _day = 3;
   int _hour = 17; //24 hour time
@@ -48,6 +52,8 @@ void loop() {
   float alt_degrees = sun_to_motor(altitude);
   float azi_degrees = sun_to_motor(azimuth);
   
+
+  //delays are to allow gears to engage and disengage. 
   switch_gears(1);
   delay(250);
   run_motora(64);
@@ -66,6 +72,9 @@ float sun_to_motor(float _degrees) {
   // This method translates the two angles calculated
   // from the sun_Posi_calc and translates it to steps
   // to run the motor
+
+  //This particular stepper motor has a stride angle of 5.625. 
+  //This is calculated using steps per revolution which is 64 for this motor. 260/64 = 5.625
   float steps = _degrees/5.625;
   return steps;
 }
