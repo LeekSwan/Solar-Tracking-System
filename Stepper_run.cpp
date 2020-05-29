@@ -1,3 +1,5 @@
+//Runs motors for. We use stepper motors for better accuracy and the fact that it can run both ways. 
+
 
 int sequence_num = 0;   // a counter for the coil sequence
 int revolutions; //each revolution is 5.625 degrees
