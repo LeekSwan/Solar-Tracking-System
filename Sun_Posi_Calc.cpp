@@ -1,4 +1,5 @@
-
+//This function calculates the suns position relative to you using latitude, longitude and time zone. 
+//Accuracy has been tested with online solar position calculators using same parameters. 
 
 //////////////////////////////////////////////////  
 //PUT YOUR LATITUDE, LONGITUDE, AND TIME ZONE HERE
